@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
-// import { ThreeCircles } from 'react-loader-spinner';
 
 const SharedLayout = lazy(() => import('components/SharedLayout/SharedLayout'));
 const Home = lazy(() => import('pages/Home'));

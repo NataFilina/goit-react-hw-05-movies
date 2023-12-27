@@ -1,14 +1,14 @@
 import { GoBackBtn } from 'components/GoBackBtn/GoBackBtn';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
 import { useFetchMovieDetails } from 'hooks';
-import { Suspense } from 'react';
+import { Suspense, useRef } from 'react';
 import { ThreeCircles } from 'react-loader-spinner';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
 const MovieDetails = () => {
   const { movie, error, isLoading } = useFetchMovieDetails();
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
+  const backLinkHref = useRef(location.state?.from ?? '/');
 
   return (
     <>
@@ -23,7 +23,7 @@ const MovieDetails = () => {
         />
       )}
       {error && <h2>Something went wrong</h2>}
-      <GoBackBtn path={backLinkHref} />
+      <GoBackBtn path={backLinkHref.current} />
       <MovieInfo movie={movie} />
       <ul style={{ listStyle: 'none', display: 'flex', gap: '10px' }}>
         <li>
