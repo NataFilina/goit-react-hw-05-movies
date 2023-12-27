@@ -1,0 +1,12 @@
+.ul {
+  list-style: none;
+}
+.img {
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px 1px rgb(212, 186, 145);
+  margin: 10px 0;
+}
+.text {
+  padding-bottom: 10px;
+  margin: 0;
+}
